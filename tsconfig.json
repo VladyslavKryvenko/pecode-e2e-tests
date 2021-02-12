@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./pecode-e2e-tests",
+    "paths": {
+      "*": [
+        "./*"
+      ],
+      "src/": [
+        "./src/*"
+      ],
+    },
+    "target": "es2017",
+    "module": "commonjs",
+    "types": ["node", "@wdio/sync", "mocha", "faker"],
+    "strict": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  }
+}

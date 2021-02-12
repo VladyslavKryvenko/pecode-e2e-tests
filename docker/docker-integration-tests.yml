@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  selenoid:
+    image: aerokube/selenoid:latest-release
+    ports:
+      - "4444:4444"
+    volumes:
+      - ./selenoid/config/:/etc/selenoid/
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./selenoid/data/:/tmp/
+      - $PWD/output/selenoid-video-logs:/opt/selenoid/video/
+    environment:
+      - OVERRIDE_VIDEO_OUTPUT_DIR=$PWD/output/selenoid-video-logs
+    command: -container-network "docker_default" -service-startup-timeout 2m -session-attempt-timeout 2m
+
+  selenoid-ui:
+    image: aerokube/selenoid-ui
+    links:
+      - selenoid
+    ports:
+      - "8181:8181"
+    command: --selenoid-uri http://selenoid:4444 --listen 0.0.0.0:8181

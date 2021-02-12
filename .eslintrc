@@ -1,0 +1,29 @@
+{
+  "plugins": ["ui-testing", "@typescript-eslint"],
+  "extends":
+  [
+    "plugin:ui-testing/webdriverio",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-multiple-empty-lines": ["error", { max: 2, maxEOF: 0, maxBOF: 0 }],
+    "semi": ["error", "always"],
+    "indent": ["error", 4, { "MemberExpression": 1, "SwitchCase": 1 }],
+    "quotes": ["warn", "single", { "allowTemplateLiterals": true }],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "ui-testing/no-link-text-selector": "off",
+    "ui-testing/missing-assertion-in-test": [
+      "error",
+      {
+        "assertCommands":
+        [
+          "see",
+          "seeInUrl",
+          "seeElement"
+        ]
+      }
+    ]
+  }
+}
