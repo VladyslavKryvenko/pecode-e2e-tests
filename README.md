@@ -14,19 +14,16 @@ To kill all Selenoid containers:
 ```
 
 ### Run all tests
+Before running the tests you should create `.env` file and add environment variables there (e.g. `.env-example`).
 ```sh
     npm run test
 ```
 ### The Mochawesome test report
-To see the mochawesome report you need to go to the output folder and select mochawesome-html-report. Run file in browser
+To see the mochawesome report you need to open in the browser `./output/mochawesome-html-report/mochawesome-e2e-report.html`.
 
 ![idea-file-new-project.png](https://i.imgur.com/c2UJK0W.png)
 
-### The Video test report
-You can watch the video report in Selenoid UI
-You need to go
-* `http://localhost:8181` - Selenoid UI
-  
-Then open the video tab
-![idea-file-new-project.png](https://i.imgur.com/o54qB8W.png)
+### The Video test reports
+To see the video reports you should open `http://localhost:8181` and select the `VIDEOS` tab.
 
+![idea-file-new-project.png](https://i.imgur.com/o54qB8W.png)
